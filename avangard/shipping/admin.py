@@ -81,10 +81,14 @@ class ShippingResource(resources.ModelResource):
         # }
 
 
-class ShippingAdmin(ImportMixin, ExportActionMixin, admin.ModelAdmin):
+from ajax_select.admin import AjaxSelectAdmin
+
+
+class ShippingAdmin(ImportMixin, ExportActionMixin, AjaxSelectAdmin, admin.ModelAdmin):
     resource_class = ShippingResource
-    # from .forms import ShippingForm
-    # form = ShippingForm
+    from .forms import ShippingForm
+
+    form = ShippingForm
     list_display = [
         field.name for field in Shipping._meta.get_fields() if field.name != "id"
     ]
