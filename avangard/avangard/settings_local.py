@@ -1,10 +1,6 @@
 import os
 
 from dotenv import load_dotenv
-import os
-import django_heroku
-import dj_database_url
-from decouple import config
 
 load_dotenv()
 
@@ -35,8 +31,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    # "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -103,6 +98,7 @@ DATE_FORMAT = "d.m.Y"
 
 USE_TZ = True
 
+STATIC_URL = "/static/"
 
 DATE_INPUT_FORMATS = (
     "%d.%m.%Y",
@@ -116,13 +112,3 @@ DATE_INPUT_FORMATS = (
 )
 
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATIC_URL = "/static/"
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
-
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-django_heroku.settings(locals())
