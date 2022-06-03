@@ -10,7 +10,7 @@ load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DEBUG = True
+DEBUG = False
 # CSRF_TRUSTED_ORIGINS = []
 ALLOWED_HOSTS = []
 
