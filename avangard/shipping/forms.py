@@ -1,33 +1,10 @@
-from ajax_select.fields import AutoCompleteSelectMultipleField, AutoCompleteField
-from pkg_resources import require
-from .models import Shipping
+from ajax_select.fields import AutoCompleteField
 from django import forms
+
+from .models import Shipping
 
 
 class ShippingForm(forms.ModelForm):
-    # supplier = AutoCompleteField(
-    #     "suppliers", label="Поставщик", required=False, help_text=None
-    # )
-    # factory = AutoCompleteField(
-    #     "factories", label="Завод", required=False, help_text=None
-    # )
-    # order = AutoCompleteField("orders", label="Приказ", required=False, help_text=None)
-    # seller = AutoCompleteField(
-    #     "sellers", label="Продавец", required=False, help_text=None
-    # )
-    # buyer = AutoCompleteField(
-    #     "buyers", label="Покупатель", required=False, help_text=None
-    # )
-    # product = AutoCompleteField(
-    #     "products", label="Продукция", required=False, help_text=None
-    # )
-    # driver = AutoCompleteField(
-    #     "drivers", label="Водитель", required=False, help_text=None
-    # )
-    # address = AutoCompleteField(
-    #     "addresses", label="Адрес", required=False, help_text=None
-    # )
-
     supplier = AutoCompleteField(
         "supplier", label="Поставщик", required=False, help_text=None
     )
@@ -50,9 +27,6 @@ class ShippingForm(forms.ModelForm):
     address = AutoCompleteField(
         "address", label="Адрес", required=False, help_text=None
     )
-    # dispatcher = AutoCompleteField(
-    #     "dispatcher", label="Диспетчер", required=False, help_text=None
-    # )
 
     class Meta:
         model = Shipping

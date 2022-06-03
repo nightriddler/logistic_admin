@@ -93,7 +93,9 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_L10N = False
+
 DATE_FORMAT = "d.m.Y"
+
 USE_TZ = True
 
 STATIC_URL = "/static/"
@@ -108,4 +110,5 @@ DATE_INPUT_FORMATS = (
     "%d %b %Y",  # '25 Oct 2006',
     "%d %B %Y",  # '25 October 2006',
 )
+
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240
