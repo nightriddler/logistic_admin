@@ -12,7 +12,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = False
 # CSRF_TRUSTED_ORIGINS = []
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 INSTALLED_APPS = [
