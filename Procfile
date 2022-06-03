@@ -1,1 +1,1 @@
-web: gunicorn avangard.wsgi
+web: gunicorn avangard.avangard.wsgi
