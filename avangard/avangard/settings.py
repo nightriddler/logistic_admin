@@ -1,5 +1,3 @@
-import os
-
 from dotenv import load_dotenv
 import os
 import django_heroku
@@ -13,10 +11,8 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = True
-CSRF_TRUSTED_ORIGINS = [
-    "https://e209-83-220-236-197.ngrok.io",
-]
-ALLOWED_HOSTS = ["*", "https://e209-83-220-236-197.ngrok.io"]
+# CSRF_TRUSTED_ORIGINS = []
+ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
