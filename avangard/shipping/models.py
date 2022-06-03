@@ -5,6 +5,7 @@ class Shipping(models.Model):
     waybill_choice = (("1", "Да"), ("0", "Нет"))
 
     date = models.DateField(
+        null=True,
         blank=True,
         verbose_name="Дата",
     )
@@ -25,11 +26,13 @@ class Shipping(models.Model):
         blank=True, verbose_name="Количество", default=1
     )
     purchase_price = models.PositiveIntegerField(
-        blank=True, verbose_name="Цена покупки"
+        blank=True, verbose_name="Цена покупки", default="5000"
     )
-    sales_price = models.PositiveIntegerField(blank=True, verbose_name="Цена продажи")
+    sales_price = models.PositiveIntegerField(
+        blank=True, verbose_name="Цена продажи", default="0"
+    )
     delivery_price = models.PositiveIntegerField(
-        blank=True, verbose_name="Цена доставки"
+        blank=True, verbose_name="Цена доставки", default="0"
     )
     driver = models.CharField(blank=True, max_length=250, verbose_name="Водитель")
     address = models.CharField(blank=True, max_length=250, verbose_name="Адрес")

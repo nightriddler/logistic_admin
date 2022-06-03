@@ -58,7 +58,7 @@ TEMPLATES = [
         },
     },
 ]
-print(TEMPLATES)
+
 WSGI_APPLICATION = "avangard.wsgi.application"
 
 
