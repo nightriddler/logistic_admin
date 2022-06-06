@@ -1,3 +1,4 @@
+from ajax_select.admin import AjaxSelectAdmin
 from django.contrib import admin
 from import_export import resources
 from import_export.admin import ExportActionMixin, ImportMixin
@@ -79,9 +80,6 @@ class ShippingResource(resources.ModelResource):
         # }
 
 
-from ajax_select.admin import AjaxSelectAdmin
-
-
 class ShippingAdmin(ImportMixin, ExportActionMixin, AjaxSelectAdmin, admin.ModelAdmin):
     resource_class = ShippingResource
     from .forms import ShippingForm
@@ -151,5 +149,6 @@ admin.site.register(Shipping, ShippingAdmin)
 # admin.site.disable_action("delete_selected")
 admin.site.site_header = "ТК Авангард"
 admin.site.site_title = "Авангард"
+admin.site.index_title = "Управление отгрузками"
 # admin.site.index_template = "admin/shipping/shipping/"
 # admin.autodiscover()

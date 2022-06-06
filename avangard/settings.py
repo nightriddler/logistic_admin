@@ -1,8 +1,9 @@
-from dotenv import load_dotenv
 import os
-import django_heroku
+
 import dj_database_url
+import django_heroku
 from decouple import config
+from dotenv import load_dotenv
 
 load_dotenv()
 

@@ -40,7 +40,6 @@ class Shipping(models.Model):
     comment = models.CharField(blank=True, max_length=250, verbose_name="Комментарий")
 
     class Meta:
-        db_table = "Таблица отгрузок"
         verbose_name = "Отгрузку"
         verbose_name_plural = "Отгрузки"
         ordering = ["-id"]
